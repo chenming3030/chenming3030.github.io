@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>堆 | 技术知识体系</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="技术知识体系">
+    
+    <link rel="preload" href="/assets/css/0.styles.c5842e21.css" as="style"><link rel="preload" href="/assets/js/app.e0f9c76a.js" as="script"><link rel="preload" href="/assets/js/3.217c33d1.js" as="script"><link rel="preload" href="/assets/js/12.c4505c2a.js" as="script"><link rel="prefetch" href="/assets/js/10.b2ba3e10.js"><link rel="prefetch" href="/assets/js/11.8fd23ea8.js"><link rel="prefetch" href="/assets/js/13.1ccdf175.js"><link rel="prefetch" href="/assets/js/14.464cb07c.js"><link rel="prefetch" href="/assets/js/15.b3e98e98.js"><link rel="prefetch" href="/assets/js/16.1de0d55e.js"><link rel="prefetch" href="/assets/js/17.27c8d747.js"><link rel="prefetch" href="/assets/js/18.b4d74dfb.js"><link rel="prefetch" href="/assets/js/19.104a3829.js"><link rel="prefetch" href="/assets/js/2.8a49b833.js"><link rel="prefetch" href="/assets/js/20.c52387c8.js"><link rel="prefetch" href="/assets/js/21.413651b8.js"><link rel="prefetch" href="/assets/js/22.a6f7d9ef.js"><link rel="prefetch" href="/assets/js/23.f869a80b.js"><link rel="prefetch" href="/assets/js/24.ae4505e1.js"><link rel="prefetch" href="/assets/js/25.be5ddfad.js"><link rel="prefetch" href="/assets/js/26.b463f19d.js"><link rel="prefetch" href="/assets/js/27.b0658e05.js"><link rel="prefetch" href="/assets/js/28.b4988dde.js"><link rel="prefetch" href="/assets/js/29.56dc9028.js"><link rel="prefetch" href="/assets/js/30.032cc336.js"><link rel="prefetch" href="/assets/js/31.e1c50e2a.js"><link rel="prefetch" href="/assets/js/32.a23eabe5.js"><link rel="prefetch" href="/assets/js/4.519fdd59.js"><link rel="prefetch" href="/assets/js/5.ee53f447.js"><link rel="prefetch" href="/assets/js/6.b5de25b4.js"><link rel="prefetch" href="/assets/js/7.550f07bc.js"><link rel="prefetch" href="/assets/js/8.72d81b78.js"><link rel="prefetch" href="/assets/js/9.84284b94.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c5842e21.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">技术知识体系</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/javase/" class="nav-link">
+  JavaSE
+</a></li><li class="dropdown-item"><!----> <a href="/java/javaee/" class="nav-link">
+  JavaEE
+</a></li><li class="dropdown-item"><!----> <a href="/java/juc/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/java/io/" class="nav-link">
+  IO/NIO/AIO
+</a></li><li class="dropdown-item"><!----> <a href="/java/algorithm/" class="nav-link router-link-active">
+  数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/java/design/" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/java/jvm/" class="nav-link">
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/java/jdk8/" class="nav-link">
+  JDK8新特性
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/framework/springmvc/" class="nav-link">
+  SpringMVC
+</a></li><li class="dropdown-item"><!----> <a href="/framework/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/framework/mybatis/" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springboot/" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springcloud/" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-item"><!----> <a href="/framework/activiti7/" class="nav-link">
+  Activiti7
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/middle/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/middle/rabbitmq/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-item"><!----> <a href="/middle/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/middle/zookeeper/" class="nav-link">
+  Zookeeper
+</a></li><li class="dropdown-item"><!----> <a href="/middle/netty/" class="nav-link">
+  Netty
+</a></li><li class="dropdown-item"><!----> <a href="/middle/emqx/" class="nav-link">
+  EMQX
+</a></li><li class="dropdown-item"><!----> <a href="/middle/tomcat/" class="nav-link">
+  Tomcat
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-subitem"><a href="/db/oracle/" class="nav-link">
+  Oracle
+</a></li><li class="dropdown-subitem"><a href="/db/sqlserver/" class="nav-link">
+  SQL Server
+</a></li></ul></li><li class="dropdown-item"><h4>
+          非关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/db/mongodb/" class="nav-link">
+  MongoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/engineering/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/" class="nav-link">
+  React
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维|工具" class="dropdown-title"><span class="title">运维|工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维|工具" class="mobile-dropdown-title"><span class="title">运维|工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/k8s/" class="nav-link">
+  K8S
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><span class="title">大数据</span> <span class="arrow down"></span></button> <button type="button" aria-label="大数据" class="mobile-dropdown-title"><span class="title">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bigdata/hadoop/" class="nav-link">
+  Hadoop
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hive/" class="nav-link">
+  Hive
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/oozie/" class="nav-link">
+  Oozie
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hbase/" class="nav-link">
+  Hbase
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/kafka/" class="nav-link">
+  Kafka
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flume/" class="nav-link">
+  Flume
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/spark/" class="nav-link">
+  Spark
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flink/" class="nav-link">
+  Flink
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安卓" class="dropdown-title"><span class="title">安卓</span> <span class="arrow down"></span></button> <button type="button" aria-label="安卓" class="mobile-dropdown-title"><span class="title">安卓</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/android/linux/" class="nav-link">
+  布局
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  四大组件
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  碎片
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/android/k8s/" class="nav-link">
+  数据存储
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  常用控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  自定义控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  绘图API
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  drawable
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  多媒体
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="嵌入式" class="dropdown-title"><span class="title">嵌入式</span> <span class="arrow down"></span></button> <button type="button" aria-label="嵌入式" class="mobile-dropdown-title"><span class="title">嵌入式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/iot/digital/" class="nav-link">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/iot/51/" class="nav-link">
+  51单片机
+</a></li></ul></div></div><div class="nav-item"><a href="/pmp/" class="nav-link">
+  项目管理
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  个人博客
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/javase/" class="nav-link">
+  JavaSE
+</a></li><li class="dropdown-item"><!----> <a href="/java/javaee/" class="nav-link">
+  JavaEE
+</a></li><li class="dropdown-item"><!----> <a href="/java/juc/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/java/io/" class="nav-link">
+  IO/NIO/AIO
+</a></li><li class="dropdown-item"><!----> <a href="/java/algorithm/" class="nav-link router-link-active">
+  数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/java/design/" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/java/jvm/" class="nav-link">
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/java/jdk8/" class="nav-link">
+  JDK8新特性
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/framework/springmvc/" class="nav-link">
+  SpringMVC
+</a></li><li class="dropdown-item"><!----> <a href="/framework/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/framework/mybatis/" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springboot/" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springcloud/" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-item"><!----> <a href="/framework/activiti7/" class="nav-link">
+  Activiti7
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/middle/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/middle/rabbitmq/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-item"><!----> <a href="/middle/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/middle/zookeeper/" class="nav-link">
+  Zookeeper
+</a></li><li class="dropdown-item"><!----> <a href="/middle/netty/" class="nav-link">
+  Netty
+</a></li><li class="dropdown-item"><!----> <a href="/middle/emqx/" class="nav-link">
+  EMQX
+</a></li><li class="dropdown-item"><!----> <a href="/middle/tomcat/" class="nav-link">
+  Tomcat
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-subitem"><a href="/db/oracle/" class="nav-link">
+  Oracle
+</a></li><li class="dropdown-subitem"><a href="/db/sqlserver/" class="nav-link">
+  SQL Server
+</a></li></ul></li><li class="dropdown-item"><h4>
+          非关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/db/mongodb/" class="nav-link">
+  MongoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/engineering/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/" class="nav-link">
+  React
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维|工具" class="dropdown-title"><span class="title">运维|工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维|工具" class="mobile-dropdown-title"><span class="title">运维|工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/k8s/" class="nav-link">
+  K8S
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><span class="title">大数据</span> <span class="arrow down"></span></button> <button type="button" aria-label="大数据" class="mobile-dropdown-title"><span class="title">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bigdata/hadoop/" class="nav-link">
+  Hadoop
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hive/" class="nav-link">
+  Hive
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/oozie/" class="nav-link">
+  Oozie
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hbase/" class="nav-link">
+  Hbase
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/kafka/" class="nav-link">
+  Kafka
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flume/" class="nav-link">
+  Flume
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/spark/" class="nav-link">
+  Spark
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flink/" class="nav-link">
+  Flink
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安卓" class="dropdown-title"><span class="title">安卓</span> <span class="arrow down"></span></button> <button type="button" aria-label="安卓" class="mobile-dropdown-title"><span class="title">安卓</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/android/linux/" class="nav-link">
+  布局
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  四大组件
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  碎片
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/android/k8s/" class="nav-link">
+  数据存储
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  常用控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  自定义控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  绘图API
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  drawable
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  多媒体
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="嵌入式" class="dropdown-title"><span class="title">嵌入式</span> <span class="arrow down"></span></button> <button type="button" aria-label="嵌入式" class="mobile-dropdown-title"><span class="title">嵌入式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/iot/digital/" class="nav-link">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/iot/51/" class="nav-link">
+  51单片机
+</a></li></ul></div></div><div class="nav-item"><a href="/pmp/" class="nav-link">
+  项目管理
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  个人博客
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>数据结构和算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/java/algorithm/summary.html" class="sidebar-link">概述</a></li><li><a href="/java/algorithm/analyse.html" class="sidebar-link">算法分析</a></li><li><a href="/java/algorithm/sort.html" class="sidebar-link">排序</a></li><li><a href="/java/algorithm/list.html" class="sidebar-link">线性表</a></li><li><a href="/java/algorithm/stack.html" class="sidebar-link">栈</a></li><li><a href="/java/algorithm/queue.html" class="sidebar-link">队列</a></li><li><a href="/java/algorithm/symbolTable.html" class="sidebar-link">符号表</a></li><li><a href="/java/algorithm/tree.html" class="sidebar-link">树</a></li><li><a href="/java/algorithm/treeAdvanced.html" class="sidebar-link">平衡树</a></li><li><a href="/java/algorithm/heap.html" aria-current="page" class="active sidebar-link">堆</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/java/algorithm/heap.html#_1-堆的定义" class="sidebar-link">1. 堆的定义</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/heap.html#_2-堆的实现" class="sidebar-link">2. 堆的实现</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/java/algorithm/heap.html#_2-1-insert插入方法的实现" class="sidebar-link">2.1  insert插入方法的实现</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/heap.html#_2-2-delmax删除最大元素方法的实现" class="sidebar-link">2.2 delMax删除最大元素方法的实现</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/heap.html#_2-3-堆的实现代码" class="sidebar-link">2.3 堆的实现代码</a></li></ul></li><li class="sidebar-sub-header"><a href="/java/algorithm/heap.html#_3-堆排序" class="sidebar-link">3.  堆排序</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/java/algorithm/heap.html#_3-1-堆构造过程" class="sidebar-link">3.1 堆构造过程</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/heap.html#_3-2-堆排序过程" class="sidebar-link">3.2  堆排序过程</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/heap.html#_3-3-堆排序代码" class="sidebar-link">3.3 堆排序代码</a></li></ul></li></ul></li><li><a href="/java/algorithm/priorityQueue.html" class="sidebar-link">优先队列</a></li><li><a href="/java/algorithm/UF.html" class="sidebar-link">并查集</a></li><li><a href="/java/algorithm/graph.html" class="sidebar-link">图</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="堆"><a href="#堆" class="header-anchor">#</a> 堆</h1> <h2 id="_1-堆的定义"><a href="#_1-堆的定义" class="header-anchor">#</a> 1. 堆的定义</h2> <p>堆是计算机科学中一类特殊的数据结构的统称，堆通常可以被看做是一棵完全二叉树的数组对象。</p> <br> <p><strong>堆的特性</strong></p> <ol><li>它是完全二叉树，除了树的最后一层结点不需要是满的，其它的每一层从左到右都是满的，如果最后一层结点不是满的，那么要求左满右不满。</li></ol> <img height="220px" src="/assets/img/00175.a62914bb.jpg"> <br> <br> <ol start="2"><li><p>它通常用 <code>数组</code> 来实现，具体方法就是将二叉树的结点按照层级顺序放入数组中，根结点在位置1，它的子结点在位置2和3，而子结点的子结点则分别在位置4,5,6和7，以此类推。</p> <p>如果一个结点的位置为k，则它的父结点的位置为 [k/2]，而它的两个子结点的位置则分别为 2k 和 2k+1 。这样，在不使用指针的情况下，我们也可以通过计算数组的索引在树中上下移动：从 a[k] 向上一层，就令 k 等于 k/2，向下一层就令 k 等于 2k 或 2k+1。</p></li></ol> <img height="380px" src="/assets/img/00176.870b821a.jpg"> <br> <br> <ol start="3"><li>每个结点都大于等于它的两个子结点。这里要注意堆中仅仅规定了每个结点大于等于它的两个子结点，但这两个子结点的顺序并没有做规定，跟我们之前学习的二叉查找树是有区别的。</li></ol> <h2 id="_2-堆的实现"><a href="#_2-堆的实现" class="header-anchor">#</a> 2. 堆的实现</h2> <h3 id="_2-1-insert插入方法的实现"><a href="#_2-1-insert插入方法的实现" class="header-anchor">#</a> 2.1  insert插入方法的实现</h3> <p>堆是用数组完成数据元素的存储的，由于数组的底层是一串连续的内存地址，所以我们要往堆中插入数据，我们只能往数组中从索引0处开始，依次往后存放数据，但是堆中对元素的顺序是有要求的，每一个结点的数据要大于等于它的两个子结点的数据，所以每次插入一个元素，都会使得堆中的数据顺序变乱，这个时候我们就需要通过一些方法让刚才插入的这个数据放入到合适的位置。</p> <img height="500px" src="/assets/img/00177.8244a7f3.jpg"> <br> <img height="480px" src="/assets/img/00178.0f723dcc.jpg"> <br> <p>所以，如果往堆中新插入元素，我们只需要不断的比较新结点 a[k] 和它的父结点 a[k/2] 的大小，然后根据结果完成数据元素的交换，就可以完成堆的有序调整。</p> <h3 id="_2-2-delmax删除最大元素方法的实现"><a href="#_2-2-delmax删除最大元素方法的实现" class="header-anchor">#</a> 2.2 delMax删除最大元素方法的实现</h3> <p>由堆的特性我们可以知道，索引1处的元素，也就是根结点就是最大的元素，当我们把根结点的元素删除后，需要有一个新的根结点出现，这时我们可以暂时把堆中最后一个元素放到索引1处，充当根结点，但是它有可能不满足堆的有序性需求，这个时候我们就需要通过一些方法，让这个新的根结点放入到合适的位置。</p> <img height="480px" src="/assets/img/00179.a34cf4ce.jpg"> <br> <img height="480px" src="/assets/img/00180.a9e87507.jpg"> <br> <img height="242px" src="/assets/img/00181.8e384144.jpg"> <br> <p>所以，当删除掉最大元素后，只需要将最后一个元素放到索引1处，并不断的拿着当前结点 a[k] 与它的子结点 a[2k] 和 a[2k+1] 中的较大者交换位置，即可完成堆的有序调整。</p> <h3 id="_2-3-堆的实现代码"><a href="#_2-3-堆的实现代码" class="header-anchor">#</a> 2.3 堆的实现代码</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//堆</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Heap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span> <span class="token keyword">extends</span> <span class="token class-name">Comparable</span><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+
+    <span class="token comment">//记录堆中元素的个数</span>
+    <span class="token keyword">private</span> <span class="token class-name">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span> elements<span class="token punctuation">;</span>
+    
+    <span class="token comment">//存储堆中的元素</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Heap</span><span class="token punctuation">(</span><span class="token keyword">int</span> capacity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        elements <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span>capacity<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">insert</span><span class="token punctuation">(</span><span class="token class-name">T</span> t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> elements<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">&quot;数组已满&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        elements<span class="token punctuation">[</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> t<span class="token punctuation">;</span>
+        <span class="token function">swim</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        n<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">T</span> <span class="token function">deleteMax</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">T</span> t <span class="token operator">=</span> elements<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token function">exchange</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        elements<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token function">sink</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        n<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> t<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//判断堆中索引i处的元素是否小于索引j处的元素</span>
+    <span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">less</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> elements<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>elements<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//交换堆中i索引和j索引处的值</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">exchange</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">T</span> t <span class="token operator">=</span> elements<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        elements<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> elements<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        elements<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> t<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//使用上浮算法，使索引k处的元素能在堆中处于一个正确的位置</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">swim</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//如果已经到了根结点，就不需要循环了</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">//比较当前结点和其父结点</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">less</span><span class="token punctuation">(</span>k <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">//父结点小于当前结点，需要交换</span>
+                <span class="token function">exchange</span><span class="token punctuation">(</span>k <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            k <span class="token operator">/=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//使用下沉算法，使索引k处的元素能在堆中处于一个正确的位置</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">sink</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//如果当前已经是最底层了，就不需要循环了</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">&lt;=</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">//找出子元素较大者</span>
+            <span class="token keyword">int</span> max <span class="token operator">=</span> k <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">less</span><span class="token punctuation">(</span>k <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> k <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    max <span class="token operator">=</span> k <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">//比较当前结点和子结点中的较大者，如果当前结点不小，则结束循环</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">less</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> max<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token comment">//当前结点小，则交换，</span>
+                <span class="token function">exchange</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                k <span class="token operator">=</span> max<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_3-堆排序"><a href="#_3-堆排序" class="header-anchor">#</a> 3.  堆排序</h2> <p>给定一个数组：</p> <p>String[] arr = {&quot;S&quot;,&quot;O&quot;,&quot;R&quot;,&quot;T&quot;,&quot;E&quot;,&quot;X&quot;,&quot;A&quot;,&quot;M&quot;,&quot;P&quot;,&quot;L&quot;,&quot;E&quot;}</p> <p>请对数组中的字符按从小到大排序。</p> <br> <br> <p><strong>实现步骤</strong></p> <ol><li>构造堆；</li> <li>得到堆顶元素，这个值就是最大值；</li> <li>交换堆顶元素和数组中的最后一个元素，此时所有元素中的最大元素已经放到合适的位置；</li> <li>对堆进行调整，重新让除了最后一个元素的剩余元素中的最大值放到堆顶；</li> <li>重复2~4这个步骤，直到堆中剩一个元素为止。</li></ol> <h3 id="_3-1-堆构造过程"><a href="#_3-1-堆构造过程" class="header-anchor">#</a> 3.1 堆构造过程</h3> <p>堆的构造，最直观的想法就是另外再创建一个新数组，然后从左往右遍历原数组，每得到一个元素后，添加到新数组中，并通过上浮，对堆进行调整，最后新的数组就是一个堆。</p> <p>上述的方式虽然很直观，也很简单，但是我们可以用更聪明一点的办法完成它。创建一个新数组，把原数组 <code>0~length-1</code> 的数据拷贝到新数组的 <code>1~length</code> 处，再从新数组长度的一半处开始往1索引处扫描（从右往左），然后对扫描到的每一个元素做下沉调整即可。</p> <h3 id="_3-2-堆排序过程"><a href="#_3-2-堆排序过程" class="header-anchor">#</a> 3.2  堆排序过程</h3> <p>对构造好的堆，我们只需要做类似于堆的删除操作，就可以完成排序。</p> <ol><li>将堆顶元素和堆中最后一个元素交换位置</li> <li>通过对堆顶元素下沉调整堆，把最大的元素放到堆顶（此时最后一个元素不参与堆的调整，因为最大的数据已经到了数组的最右边）</li> <li>重复1~2步骤，直到堆中剩最后一个元素</li></ol> <h3 id="_3-3-堆排序代码"><a href="#_3-3-堆排序代码" class="header-anchor">#</a> 3.3 堆排序代码</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HeapSort</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> srcArr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> heap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Comparable</span><span class="token punctuation">[</span>srcArr<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token function">createHeap</span><span class="token punctuation">(</span>srcArr<span class="token punctuation">,</span> heap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">int</span> position <span class="token operator">=</span> heap<span class="token punctuation">.</span>length <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>position <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">exchange</span><span class="token punctuation">(</span>heap<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> position<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            position<span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token function">sink</span><span class="token punctuation">(</span>heap<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> position<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> sortedArr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Comparable</span><span class="token punctuation">[</span>srcArr<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>heap<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> sortedArr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> srcArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> sortedArr<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">createHeap</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> srcArr<span class="token punctuation">,</span> <span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> heap<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>srcArr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> heap<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> srcArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> srcArr<span class="token punctuation">.</span>length <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">sink</span><span class="token punctuation">(</span>heap<span class="token punctuation">,</span> i<span class="token punctuation">,</span> srcArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">sink</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> heap<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">&lt;=</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">//找出子元素较大者</span>
+            <span class="token keyword">int</span> max <span class="token operator">=</span> k <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">less</span><span class="token punctuation">(</span>heap<span class="token punctuation">,</span> k <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> k <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    max <span class="token operator">=</span> k <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">less</span><span class="token punctuation">(</span>heap<span class="token punctuation">,</span> k<span class="token punctuation">,</span> max<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token function">exchange</span><span class="token punctuation">(</span>heap<span class="token punctuation">,</span> k<span class="token punctuation">,</span> max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                k <span class="token operator">=</span> max<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">less</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> heap<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> heap<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>heap<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">exchange</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> heap<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Comparable</span> t <span class="token operator">=</span> heap<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        heap<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> heap<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        heap<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> t<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+
+<span class="token comment">//测试代码</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;S&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;O&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;R&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;T&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;E&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;X&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;A&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;M&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;P&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;L&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;E&quot;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token class-name">HeapSort</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/java/algorithm/treeAdvanced.html" class="prev">
+        平衡树
+      </a></span> <span class="next"><a href="/java/algorithm/priorityQueue.html">
+        优先队列
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e0f9c76a.js" defer></script><script src="/assets/js/3.217c33d1.js" defer></script><script src="/assets/js/12.c4505c2a.js" defer></script>
+  </body>
+</html>

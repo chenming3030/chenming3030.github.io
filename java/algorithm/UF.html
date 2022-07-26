@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>并查集 | 技术知识体系</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="技术知识体系">
+    
+    <link rel="preload" href="/assets/css/0.styles.c5842e21.css" as="style"><link rel="preload" href="/assets/js/app.e0f9c76a.js" as="script"><link rel="preload" href="/assets/js/3.217c33d1.js" as="script"><link rel="preload" href="/assets/js/10.b2ba3e10.js" as="script"><link rel="prefetch" href="/assets/js/11.8fd23ea8.js"><link rel="prefetch" href="/assets/js/12.c4505c2a.js"><link rel="prefetch" href="/assets/js/13.1ccdf175.js"><link rel="prefetch" href="/assets/js/14.464cb07c.js"><link rel="prefetch" href="/assets/js/15.b3e98e98.js"><link rel="prefetch" href="/assets/js/16.1de0d55e.js"><link rel="prefetch" href="/assets/js/17.27c8d747.js"><link rel="prefetch" href="/assets/js/18.b4d74dfb.js"><link rel="prefetch" href="/assets/js/19.104a3829.js"><link rel="prefetch" href="/assets/js/2.8a49b833.js"><link rel="prefetch" href="/assets/js/20.c52387c8.js"><link rel="prefetch" href="/assets/js/21.413651b8.js"><link rel="prefetch" href="/assets/js/22.a6f7d9ef.js"><link rel="prefetch" href="/assets/js/23.f869a80b.js"><link rel="prefetch" href="/assets/js/24.ae4505e1.js"><link rel="prefetch" href="/assets/js/25.be5ddfad.js"><link rel="prefetch" href="/assets/js/26.b463f19d.js"><link rel="prefetch" href="/assets/js/27.b0658e05.js"><link rel="prefetch" href="/assets/js/28.b4988dde.js"><link rel="prefetch" href="/assets/js/29.56dc9028.js"><link rel="prefetch" href="/assets/js/30.032cc336.js"><link rel="prefetch" href="/assets/js/31.e1c50e2a.js"><link rel="prefetch" href="/assets/js/32.a23eabe5.js"><link rel="prefetch" href="/assets/js/4.519fdd59.js"><link rel="prefetch" href="/assets/js/5.ee53f447.js"><link rel="prefetch" href="/assets/js/6.b5de25b4.js"><link rel="prefetch" href="/assets/js/7.550f07bc.js"><link rel="prefetch" href="/assets/js/8.72d81b78.js"><link rel="prefetch" href="/assets/js/9.84284b94.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c5842e21.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">技术知识体系</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/javase/" class="nav-link">
+  JavaSE
+</a></li><li class="dropdown-item"><!----> <a href="/java/javaee/" class="nav-link">
+  JavaEE
+</a></li><li class="dropdown-item"><!----> <a href="/java/juc/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/java/io/" class="nav-link">
+  IO/NIO/AIO
+</a></li><li class="dropdown-item"><!----> <a href="/java/algorithm/" class="nav-link router-link-active">
+  数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/java/design/" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/java/jvm/" class="nav-link">
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/java/jdk8/" class="nav-link">
+  JDK8新特性
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/framework/springmvc/" class="nav-link">
+  SpringMVC
+</a></li><li class="dropdown-item"><!----> <a href="/framework/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/framework/mybatis/" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springboot/" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springcloud/" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-item"><!----> <a href="/framework/activiti7/" class="nav-link">
+  Activiti7
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/middle/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/middle/rabbitmq/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-item"><!----> <a href="/middle/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/middle/zookeeper/" class="nav-link">
+  Zookeeper
+</a></li><li class="dropdown-item"><!----> <a href="/middle/netty/" class="nav-link">
+  Netty
+</a></li><li class="dropdown-item"><!----> <a href="/middle/emqx/" class="nav-link">
+  EMQX
+</a></li><li class="dropdown-item"><!----> <a href="/middle/tomcat/" class="nav-link">
+  Tomcat
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-subitem"><a href="/db/oracle/" class="nav-link">
+  Oracle
+</a></li><li class="dropdown-subitem"><a href="/db/sqlserver/" class="nav-link">
+  SQL Server
+</a></li></ul></li><li class="dropdown-item"><h4>
+          非关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/db/mongodb/" class="nav-link">
+  MongoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/engineering/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/" class="nav-link">
+  React
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维|工具" class="dropdown-title"><span class="title">运维|工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维|工具" class="mobile-dropdown-title"><span class="title">运维|工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/k8s/" class="nav-link">
+  K8S
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><span class="title">大数据</span> <span class="arrow down"></span></button> <button type="button" aria-label="大数据" class="mobile-dropdown-title"><span class="title">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bigdata/hadoop/" class="nav-link">
+  Hadoop
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hive/" class="nav-link">
+  Hive
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/oozie/" class="nav-link">
+  Oozie
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hbase/" class="nav-link">
+  Hbase
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/kafka/" class="nav-link">
+  Kafka
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flume/" class="nav-link">
+  Flume
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/spark/" class="nav-link">
+  Spark
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flink/" class="nav-link">
+  Flink
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安卓" class="dropdown-title"><span class="title">安卓</span> <span class="arrow down"></span></button> <button type="button" aria-label="安卓" class="mobile-dropdown-title"><span class="title">安卓</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/android/linux/" class="nav-link">
+  布局
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  四大组件
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  碎片
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/android/k8s/" class="nav-link">
+  数据存储
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  常用控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  自定义控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  绘图API
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  drawable
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  多媒体
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="嵌入式" class="dropdown-title"><span class="title">嵌入式</span> <span class="arrow down"></span></button> <button type="button" aria-label="嵌入式" class="mobile-dropdown-title"><span class="title">嵌入式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/iot/digital/" class="nav-link">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/iot/51/" class="nav-link">
+  51单片机
+</a></li></ul></div></div><div class="nav-item"><a href="/pmp/" class="nav-link">
+  项目管理
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  个人博客
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/javase/" class="nav-link">
+  JavaSE
+</a></li><li class="dropdown-item"><!----> <a href="/java/javaee/" class="nav-link">
+  JavaEE
+</a></li><li class="dropdown-item"><!----> <a href="/java/juc/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/java/io/" class="nav-link">
+  IO/NIO/AIO
+</a></li><li class="dropdown-item"><!----> <a href="/java/algorithm/" class="nav-link router-link-active">
+  数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/java/design/" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/java/jvm/" class="nav-link">
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/java/jdk8/" class="nav-link">
+  JDK8新特性
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/framework/springmvc/" class="nav-link">
+  SpringMVC
+</a></li><li class="dropdown-item"><!----> <a href="/framework/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/framework/mybatis/" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springboot/" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springcloud/" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-item"><!----> <a href="/framework/activiti7/" class="nav-link">
+  Activiti7
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/middle/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/middle/rabbitmq/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-item"><!----> <a href="/middle/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/middle/zookeeper/" class="nav-link">
+  Zookeeper
+</a></li><li class="dropdown-item"><!----> <a href="/middle/netty/" class="nav-link">
+  Netty
+</a></li><li class="dropdown-item"><!----> <a href="/middle/emqx/" class="nav-link">
+  EMQX
+</a></li><li class="dropdown-item"><!----> <a href="/middle/tomcat/" class="nav-link">
+  Tomcat
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-subitem"><a href="/db/oracle/" class="nav-link">
+  Oracle
+</a></li><li class="dropdown-subitem"><a href="/db/sqlserver/" class="nav-link">
+  SQL Server
+</a></li></ul></li><li class="dropdown-item"><h4>
+          非关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/db/mongodb/" class="nav-link">
+  MongoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/engineering/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/" class="nav-link">
+  React
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维|工具" class="dropdown-title"><span class="title">运维|工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维|工具" class="mobile-dropdown-title"><span class="title">运维|工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/k8s/" class="nav-link">
+  K8S
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><span class="title">大数据</span> <span class="arrow down"></span></button> <button type="button" aria-label="大数据" class="mobile-dropdown-title"><span class="title">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bigdata/hadoop/" class="nav-link">
+  Hadoop
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hive/" class="nav-link">
+  Hive
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/oozie/" class="nav-link">
+  Oozie
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hbase/" class="nav-link">
+  Hbase
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/kafka/" class="nav-link">
+  Kafka
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flume/" class="nav-link">
+  Flume
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/spark/" class="nav-link">
+  Spark
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flink/" class="nav-link">
+  Flink
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安卓" class="dropdown-title"><span class="title">安卓</span> <span class="arrow down"></span></button> <button type="button" aria-label="安卓" class="mobile-dropdown-title"><span class="title">安卓</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/android/linux/" class="nav-link">
+  布局
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  四大组件
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  碎片
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/android/k8s/" class="nav-link">
+  数据存储
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  常用控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  自定义控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  绘图API
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  drawable
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  多媒体
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="嵌入式" class="dropdown-title"><span class="title">嵌入式</span> <span class="arrow down"></span></button> <button type="button" aria-label="嵌入式" class="mobile-dropdown-title"><span class="title">嵌入式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/iot/digital/" class="nav-link">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/iot/51/" class="nav-link">
+  51单片机
+</a></li></ul></div></div><div class="nav-item"><a href="/pmp/" class="nav-link">
+  项目管理
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  个人博客
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>数据结构和算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/java/algorithm/summary.html" class="sidebar-link">概述</a></li><li><a href="/java/algorithm/analyse.html" class="sidebar-link">算法分析</a></li><li><a href="/java/algorithm/sort.html" class="sidebar-link">排序</a></li><li><a href="/java/algorithm/list.html" class="sidebar-link">线性表</a></li><li><a href="/java/algorithm/stack.html" class="sidebar-link">栈</a></li><li><a href="/java/algorithm/queue.html" class="sidebar-link">队列</a></li><li><a href="/java/algorithm/symbolTable.html" class="sidebar-link">符号表</a></li><li><a href="/java/algorithm/tree.html" class="sidebar-link">树</a></li><li><a href="/java/algorithm/treeAdvanced.html" class="sidebar-link">平衡树</a></li><li><a href="/java/algorithm/heap.html" class="sidebar-link">堆</a></li><li><a href="/java/algorithm/priorityQueue.html" class="sidebar-link">优先队列</a></li><li><a href="/java/algorithm/UF.html" aria-current="page" class="active sidebar-link">并查集</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_1-并查集结构" class="sidebar-link">1. 并查集结构</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_2-并查集的实现" class="sidebar-link">2. 并查集的实现</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_2-1-uf-int-n-构造方法实现" class="sidebar-link">2.1 UF(int N)构造方法实现</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_2-2-union-int-p-int-q-合并方法实现" class="sidebar-link">2.2 union(int p,int q)合并方法实现</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_2-3-代码" class="sidebar-link">2.3 代码</a></li></ul></li><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_3-并查集应用举例" class="sidebar-link">3. 并查集应用举例</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_4-uf-tree算法优化" class="sidebar-link">4. UF_Tree算法优化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_4-1-find-int-p-查询方法实现" class="sidebar-link">4.1 find(int p)查询方法实现</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_4-2-union-int-p-int-q-合并方法实现" class="sidebar-link">4.2 union(int p,int q)合并方法实现</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_4-3-代码" class="sidebar-link">4.3 代码</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_4-4-优化后的性能分析" class="sidebar-link">4.4 优化后的性能分析</a></li></ul></li><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_5-路径压缩" class="sidebar-link">5. 路径压缩</a></li><li class="sidebar-sub-header"><a href="/java/algorithm/UF.html#_6-案例-畅通工程" class="sidebar-link">6. 案例-畅通工程</a></li></ul></li><li><a href="/java/algorithm/graph.html" class="sidebar-link">图</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="并查集"><a href="#并查集" class="header-anchor">#</a> 并查集</h1> <p>并查集是一种树型的数据结构 ，并查集可以高效地进行如下操作：</p> <ul><li>查询元素 p 和元素 q 是否属于同一组</li> <li>合并元素 p 和元素 q 所在的组</li></ul> <img height="160px" src="/assets/img/00188.309e44d4.jpg"> <h2 id="_1-并查集结构"><a href="#_1-并查集结构" class="header-anchor">#</a> 1. 并查集结构</h2> <p>并查集也是一种树型结构，但这棵树跟我们之前讲的二叉树、红黑树、B树等都不一样，这种树的要求比较简单：</p> <ol><li>每个元素都唯一的对应一个结点</li> <li>每一组数据中的多个元素都在同一颗树中</li> <li>一个组中的数据对应的树和另外一个组中的数据对应的树之间没有任何联系</li> <li>元素在树中并没有子父级关系的硬性要求</li></ol> <img height="380px" src="/assets/img/00189.c6bc687f.jpg"> <h2 id="_2-并查集的实现"><a href="#_2-并查集的实现" class="header-anchor">#</a> 2. 并查集的实现</h2> <h3 id="_2-1-uf-int-n-构造方法实现"><a href="#_2-1-uf-int-n-构造方法实现" class="header-anchor">#</a> 2.1 UF(int N)构造方法实现</h3> <ol><li>初始情况下，每个元素都在一个独立的分组中，所以，初始情况下，并查集中的数据默认分为 N 个组</li> <li>初始化数组 eleAndGroup</li> <li>把 eleAndGroup 数组的索引看做是每个结点存储的元素，把 eleAndGroup 数组每个索引处的值看做是该结点所在的分组，那么初始化情况下，i 索引处存储的值就是 i</li></ol> <img height="180px" src="/assets/img/00190.51e88fcc.jpg"> <h3 id="_2-2-union-int-p-int-q-合并方法实现"><a href="#_2-2-union-int-p-int-q-合并方法实现" class="header-anchor">#</a> 2.2 union(int p,int q)合并方法实现</h3> <ol><li>如果 p 和 q 已经在同一个分组中，则无需合并</li> <li>如果 p 和 q 不在同一个分组，则只需要将 p 元素所在组的所有的元素的组标识符修改为 q 元素所在组的标识符即可</li> <li>分组数量 -1</li></ol> <img height="220px" src="/assets/img/00191.86405aa6.jpg"> <h3 id="_2-3-代码"><a href="#_2-3-代码" class="header-anchor">#</a> 2.3 代码</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//并查集</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UF</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">//记录结点元素和该元素所在分组的标识</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> eleAndGroup<span class="token punctuation">;</span>
+
+    <span class="token comment">//记录并查集中数据的分组个数</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">UF</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        eleAndGroup <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> eleAndGroup<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            eleAndGroup<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> count<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//元素p所在分组的标识符</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> eleAndGroup<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">connected</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">union</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">connected</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">int</span> pGroup <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> qGroup <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> eleAndGroup<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>eleAndGroup<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pGroup<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                eleAndGroup<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> qGroup<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        count<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_3-并查集应用举例"><a href="#_3-并查集应用举例" class="header-anchor">#</a> 3. 并查集应用举例</h2> <p>如果我们并查集存储的每一个整数表示的是一个大型计算机网络中的计算机，则我们就可以通过 connected(int
+p,int q) 来检测，该网络中的某两台计算机之间是否连通？如果连通，则他们之间可以通信，如果不连通，则不能通信，此时我们又可以调用 union(int p,int q) 使得 p 和 q 之间连通，这样两台计算机之间就可以通信了。</p> <p>一般像计算机这样网络型的数据，我们要求网络中的每两个数据之间都是相连通的，也就是说，我们需要调用很多次 union 方法，使得网络中所有数据相连，其实我们很容易可以得出，如果要让网络中的数据都相连，则我们至少要调用 N-1 次 union 方法才可以，但由于我们的 union 方法中使用for循环遍历了所有的元素，所以很明显，我们之前实现的合并算法的时间复杂度是 O(N^2)，如果要解决大规模问题，它是不合适的，所以我们需要对算法进行优化。</p> <h2 id="_4-uf-tree算法优化"><a href="#_4-uf-tree算法优化" class="header-anchor">#</a> 4. UF_Tree算法优化</h2> <p>为了提升 union 算法的性能，我们需要重新设计 find 方法和 union 方法的实现，此时我们先需要对我们的之前数据结构中的 eleAndGourp 数组的含义进行重新设定：</p> <ol><li>我们仍然让 eleAndGroup 数组的索引作为某个结点的元素</li> <li>eleAndGroup[i] 的值不再是当前结点所在的分组标识，而是该结点的父结点</li></ol> <img height="180px" src="/assets/img/00192.9b1f19f1.jpg"> <h3 id="_4-1-find-int-p-查询方法实现"><a href="#_4-1-find-int-p-查询方法实现" class="header-anchor">#</a> 4.1 find(int p)查询方法实现</h3> <ol><li>判断当前元素 p 的父结点 eleAndGroup[p] 是不是自己，如果是自己则证明已经是根结点了；</li> <li>如果当前元素 p 的父结点不是自己，则让 p=eleAndGroup[p]，继续找父结点的父结点，直到找到根结点为止；</li></ol> <img height="580px" src="/assets/img/00193.825d71c7.jpg"> <h3 id="_4-2-union-int-p-int-q-合并方法实现"><a href="#_4-2-union-int-p-int-q-合并方法实现" class="header-anchor">#</a> 4.2 union(int p,int q)合并方法实现</h3> <ol><li>找到 p 元素所在树的根结点</li> <li>找到 q 元素所在树的根结点</li> <li>如果 p 和 q 已经在同一个树中，则无需合并</li> <li>如果 p 和 q 不在同一个分组，则只需要将 p 元素所在树根结点的父结点设置为 q 元素的根结点即可</li> <li>分组数量-1</li></ol> <img height="620px" src="/assets/img/00194.95c626fb.jpg"> <h3 id="_4-3-代码"><a href="#_4-3-代码" class="header-anchor">#</a> 4.3 代码</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UFTree</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">//记录结点元素和该元素所在分组的标识</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> eleAndGroup<span class="token punctuation">;</span>
+
+    <span class="token comment">//记录并查集中数据的分组个数</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">UFTree</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        eleAndGroup <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> eleAndGroup<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            eleAndGroup<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> count<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//元素p所在分组的标识符</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">==</span> eleAndGroup<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            p <span class="token operator">=</span> eleAndGroup<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">connected</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">union</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> pRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> qRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>pRoot <span class="token operator">==</span> qRoot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        eleAndGroup<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">=</span> qRoot<span class="token punctuation">;</span>
+        count<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_4-4-优化后的性能分析"><a href="#_4-4-优化后的性能分析" class="header-anchor">#</a> 4.4 优化后的性能分析</h3> <p>我们优化后的算法 union，如果要把并查集中所有的数据连通，仍然至少要调用 N-1 次union方法，但是，我们发现 union 方法中已经没有了for循环，所以 union 算法的时间复杂度由 O(N^2) 变为了 O(N)。</p> <p>但是这个算法仍然有问题，因为我们之前不仅修改了 union 算法，还修改了 find 算法。我们修改前的 find 算法的时间复杂度在任何情况下都为 O(1)，但修改后的find算法在最坏情况下是 O(N)：</p> <img height="200px" src="/assets/img/00195.62d51b7f.jpg"> <p>在 union 方法中调用了 find 方法，所以在最坏情况下 union 算法的时间复杂度仍然为 O(N)</p> <h2 id="_5-路径压缩"><a href="#_5-路径压缩" class="header-anchor">#</a> 5. 路径压缩</h2> <p>UF_Tree中最坏情况下 union 算法的时间复杂度为O(N)，其最主要的问题在于最坏情况下，树的深度和数组的大小一样，如果我们能够通过一些算法让合并时，生成的树的深度尽可能的小，就可以优化 find 方法。</p> <p>之前我们在 union 算法中，合并树的时候将任意的一棵树连接到了另外一棵树，这种合并方法是比较暴力的，如果我们把并查集中每一棵树的大小记录下来，然后在每次合并树的时候，把较小的树连接到较大的树上，就可以减小树的深度。</p> <img height="680px" src="/assets/img/00196.5f3ef36b.jpg"> <p>只要我们保证每次合并，都能把小树合并到大树上，就能够压缩合并后新树的路径，这样就能提高find方法的效率。为了完成这个需求，我们需要另外一个数组来记录存储每个根结点对应的树中元素的个数，并且需要一些代码调整数组中的值。</p> <br> <p><strong>代码</strong></p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UFTreeWeighted</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">//记录结点元素和该元素所在分组的标识</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> eleAndGroup<span class="token punctuation">;</span>
+
+    <span class="token comment">//存储每个根结点对应的树中元素的个数</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> sz<span class="token punctuation">;</span>
+
+    <span class="token comment">//记录并查集中数据的分组个数</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">UFTreeWeighted</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        eleAndGroup <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        sz <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//把eleAndGroup数组的索引看做是每个结点存储的元素，把eleAndGroup数组每个索引处的值看做是该结点的父结点，那么初始化情况下，i索引处存储的值就是i</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> eleAndGroup<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            eleAndGroup<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token comment">//把sz数组中所有的元素初始化为1，默认情况下，每个结点都是一个独立的树，每个树中只有一个元素</span>
+        <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>sz<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> count<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//元素p所在分组的标识符</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">==</span> eleAndGroup<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            p <span class="token operator">=</span> eleAndGroup<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">connected</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">union</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> pRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> qRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>pRoot <span class="token operator">==</span> qRoot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">&lt;</span> sz<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            eleAndGroup<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">=</span> qRoot<span class="token punctuation">;</span>
+            sz<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span> <span class="token operator">+=</span> sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            eleAndGroup<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span> <span class="token operator">=</span> pRoot<span class="token punctuation">;</span>
+            sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">+=</span> sz<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        count<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_6-案例-畅通工程"><a href="#_6-案例-畅通工程" class="header-anchor">#</a> 6. 案例-畅通工程</h2> <p>某省调查城镇交通状况，得到现有城镇道路统计表，表中列出了每条道路直接连通的城镇。省政府“畅通工程”的目标是使全省任何两个城镇间都可以实现交通（但不一定有直接的道路相连，只要互相间接通过道路可达即可）。问最少还需要建设多少条道路？</p> <br> <p>下面是对 城镇道路统计表 数据的解释：</p> <img height="200px" src="/assets/img/00197.fa599c4c.jpg"> <p>总共有20个城市，目前已经修改好了7条道路，问还需要修建多少条道路，才能让这20个城市之间全部相通？</p> <br> <p><strong>解题思路</strong></p> <ol><li><p>创建一个并查集UF_Tree_Weighted(20)</p></li> <li><p>分别调用union(0,1), union(6,9), union(3,8), union(5,11), union(2,12), union(6,10), union(4,8)，表示已经修建好的道路把对应的城市连接起来</p></li> <li><p>如果城市全部连接起来，那么并查集中剩余的分组数目为1，所有的城市都在一个树中，所以，只需要获取当前并查集中剩余的数目，减去1，就是还需要修建的道路数目</p></li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/java/algorithm/priorityQueue.html" class="prev">
+        优先队列
+      </a></span> <span class="next"><a href="/java/algorithm/graph.html">
+        图
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e0f9c76a.js" defer></script><script src="/assets/js/3.217c33d1.js" defer></script><script src="/assets/js/10.b2ba3e10.js" defer></script>
+  </body>
+</html>
