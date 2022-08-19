@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>设计模式概述 | 技术知识体系</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="技术知识体系">
+    
+    <link rel="preload" href="/assets/css/0.styles.53686c4c.css" as="style"><link rel="preload" href="/assets/js/app.02a3c3f9.js" as="script"><link rel="preload" href="/assets/js/4.4116396b.js" as="script"><link rel="preload" href="/assets/js/44.c0fc8b62.js" as="script"><link rel="prefetch" href="/assets/js/10.e4e323fd.js"><link rel="prefetch" href="/assets/js/11.75c07bbd.js"><link rel="prefetch" href="/assets/js/12.a6f3ba6b.js"><link rel="prefetch" href="/assets/js/13.3c7256e1.js"><link rel="prefetch" href="/assets/js/14.c9223ee6.js"><link rel="prefetch" href="/assets/js/15.951e3dca.js"><link rel="prefetch" href="/assets/js/16.e643b03f.js"><link rel="prefetch" href="/assets/js/17.3883353b.js"><link rel="prefetch" href="/assets/js/18.0dd8064a.js"><link rel="prefetch" href="/assets/js/19.d236af86.js"><link rel="prefetch" href="/assets/js/2.eb83f895.js"><link rel="prefetch" href="/assets/js/20.b9971409.js"><link rel="prefetch" href="/assets/js/21.3d8fe344.js"><link rel="prefetch" href="/assets/js/22.853e99d2.js"><link rel="prefetch" href="/assets/js/23.62f45bb0.js"><link rel="prefetch" href="/assets/js/24.bb751c2d.js"><link rel="prefetch" href="/assets/js/25.30c20e3f.js"><link rel="prefetch" href="/assets/js/26.85787a03.js"><link rel="prefetch" href="/assets/js/27.79f77e07.js"><link rel="prefetch" href="/assets/js/28.031b05a7.js"><link rel="prefetch" href="/assets/js/29.08eba26e.js"><link rel="prefetch" href="/assets/js/3.42c88c61.js"><link rel="prefetch" href="/assets/js/30.1869ff3d.js"><link rel="prefetch" href="/assets/js/31.b0b702c9.js"><link rel="prefetch" href="/assets/js/32.f0f90d58.js"><link rel="prefetch" href="/assets/js/33.81182837.js"><link rel="prefetch" href="/assets/js/34.0759a1c7.js"><link rel="prefetch" href="/assets/js/35.2dc3ab98.js"><link rel="prefetch" href="/assets/js/36.7bf230d0.js"><link rel="prefetch" href="/assets/js/37.b8b0a113.js"><link rel="prefetch" href="/assets/js/38.5b280d1a.js"><link rel="prefetch" href="/assets/js/39.99d648f4.js"><link rel="prefetch" href="/assets/js/40.8915900a.js"><link rel="prefetch" href="/assets/js/41.f303348c.js"><link rel="prefetch" href="/assets/js/42.a81831a4.js"><link rel="prefetch" href="/assets/js/43.5511af2d.js"><link rel="prefetch" href="/assets/js/45.9313c6be.js"><link rel="prefetch" href="/assets/js/46.dfdcfbc3.js"><link rel="prefetch" href="/assets/js/47.14391f85.js"><link rel="prefetch" href="/assets/js/5.2da7a405.js"><link rel="prefetch" href="/assets/js/6.7cb2dde6.js"><link rel="prefetch" href="/assets/js/7.2cbd68af.js"><link rel="prefetch" href="/assets/js/8.0bfc9489.js"><link rel="prefetch" href="/assets/js/9.a569b6c9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.53686c4c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">技术知识体系</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/javase/" class="nav-link">
+  JavaSE
+</a></li><li class="dropdown-item"><!----> <a href="/java/javaee/" class="nav-link">
+  JavaEE
+</a></li><li class="dropdown-item"><!----> <a href="/java/juc/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/java/io/" class="nav-link">
+  BIO/NIO/AIO
+</a></li><li class="dropdown-item"><!----> <a href="/java/algorithm/" class="nav-link">
+  数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/java/design_pattern/" class="nav-link router-link-active">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/java/jvm/" class="nav-link">
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/java/jdk8/" class="nav-link">
+  JDK8新特性
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/framework/springmvc/" class="nav-link">
+  SpringMVC
+</a></li><li class="dropdown-item"><!----> <a href="/framework/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/framework/mybatis/" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springboot/" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springcloud/" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-item"><!----> <a href="/framework/activiti7/" class="nav-link">
+  Activiti7
+</a></li><li class="dropdown-item"><!----> <a href="/middle/netty/" class="nav-link">
+  Netty
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/middle/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/middle/rabbitmq/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-item"><!----> <a href="/middle/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/middle/zookeeper/" class="nav-link">
+  Zookeeper
+</a></li><li class="dropdown-item"><!----> <a href="/middle/emqx/" class="nav-link">
+  EMQX
+</a></li><li class="dropdown-item"><!----> <a href="/middle/tomcat/" class="nav-link">
+  Tomcat
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-subitem"><a href="/db/oracle/" class="nav-link">
+  Oracle
+</a></li><li class="dropdown-subitem"><a href="/db/sqlserver/" class="nav-link">
+  SQL Server
+</a></li></ul></li><li class="dropdown-item"><h4>
+          非关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/db/mongodb/" class="nav-link">
+  MongoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/engineering/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/" class="nav-link">
+  React
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维|工具" class="dropdown-title"><span class="title">运维|工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维|工具" class="mobile-dropdown-title"><span class="title">运维|工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/k8s/" class="nav-link">
+  K8S
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><span class="title">大数据</span> <span class="arrow down"></span></button> <button type="button" aria-label="大数据" class="mobile-dropdown-title"><span class="title">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bigdata/hadoop/" class="nav-link">
+  Hadoop
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hive/" class="nav-link">
+  Hive
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/oozie/" class="nav-link">
+  Oozie
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hbase/" class="nav-link">
+  Hbase
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/kafka/" class="nav-link">
+  Kafka
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flume/" class="nav-link">
+  Flume
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/spark/" class="nav-link">
+  Spark
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flink/" class="nav-link">
+  Flink
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安卓" class="dropdown-title"><span class="title">安卓</span> <span class="arrow down"></span></button> <button type="button" aria-label="安卓" class="mobile-dropdown-title"><span class="title">安卓</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/android/linux/" class="nav-link">
+  布局
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  四大组件
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  碎片
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/android/k8s/" class="nav-link">
+  数据存储
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  常用控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  自定义控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  绘图API
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  drawable
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  多媒体
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="嵌入式" class="dropdown-title"><span class="title">嵌入式</span> <span class="arrow down"></span></button> <button type="button" aria-label="嵌入式" class="mobile-dropdown-title"><span class="title">嵌入式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/iot/digital/" class="nav-link">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/iot/51/" class="nav-link">
+  51单片机
+</a></li></ul></div></div><div class="nav-item"><a href="/pmp/" class="nav-link">
+  项目管理
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  个人博客
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/javase/" class="nav-link">
+  JavaSE
+</a></li><li class="dropdown-item"><!----> <a href="/java/javaee/" class="nav-link">
+  JavaEE
+</a></li><li class="dropdown-item"><!----> <a href="/java/juc/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/java/io/" class="nav-link">
+  BIO/NIO/AIO
+</a></li><li class="dropdown-item"><!----> <a href="/java/algorithm/" class="nav-link">
+  数据结构和算法
+</a></li><li class="dropdown-item"><!----> <a href="/java/design_pattern/" class="nav-link router-link-active">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/java/jvm/" class="nav-link">
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/java/jdk8/" class="nav-link">
+  JDK8新特性
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/framework/springmvc/" class="nav-link">
+  SpringMVC
+</a></li><li class="dropdown-item"><!----> <a href="/framework/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/framework/mybatis/" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springboot/" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/framework/springcloud/" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-item"><!----> <a href="/framework/activiti7/" class="nav-link">
+  Activiti7
+</a></li><li class="dropdown-item"><!----> <a href="/middle/netty/" class="nav-link">
+  Netty
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/middle/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/middle/rabbitmq/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-item"><!----> <a href="/middle/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/middle/zookeeper/" class="nav-link">
+  Zookeeper
+</a></li><li class="dropdown-item"><!----> <a href="/middle/emqx/" class="nav-link">
+  EMQX
+</a></li><li class="dropdown-item"><!----> <a href="/middle/tomcat/" class="nav-link">
+  Tomcat
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-subitem"><a href="/db/oracle/" class="nav-link">
+  Oracle
+</a></li><li class="dropdown-subitem"><a href="/db/sqlserver/" class="nav-link">
+  SQL Server
+</a></li></ul></li><li class="dropdown-item"><h4>
+          非关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/db/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/db/mongodb/" class="nav-link">
+  MongoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/engineering/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/" class="nav-link">
+  React
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维|工具" class="dropdown-title"><span class="title">运维|工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维|工具" class="mobile-dropdown-title"><span class="title">运维|工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/k8s/" class="nav-link">
+  K8S
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><span class="title">大数据</span> <span class="arrow down"></span></button> <button type="button" aria-label="大数据" class="mobile-dropdown-title"><span class="title">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bigdata/hadoop/" class="nav-link">
+  Hadoop
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hive/" class="nav-link">
+  Hive
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/oozie/" class="nav-link">
+  Oozie
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/hbase/" class="nav-link">
+  Hbase
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/kafka/" class="nav-link">
+  Kafka
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flume/" class="nav-link">
+  Flume
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/spark/" class="nav-link">
+  Spark
+</a></li><li class="dropdown-item"><!----> <a href="/bigdata/flink/" class="nav-link">
+  Flink
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安卓" class="dropdown-title"><span class="title">安卓</span> <span class="arrow down"></span></button> <button type="button" aria-label="安卓" class="mobile-dropdown-title"><span class="title">安卓</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/android/linux/" class="nav-link">
+  布局
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  四大组件
+</a></li><li class="dropdown-item"><!----> <a href="/android/docker/" class="nav-link">
+  碎片
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/android/k8s/" class="nav-link">
+  数据存储
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  常用控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  自定义控件
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  绘图API
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  drawable
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/android/animation/" class="nav-link">
+  多媒体
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="嵌入式" class="dropdown-title"><span class="title">嵌入式</span> <span class="arrow down"></span></button> <button type="button" aria-label="嵌入式" class="mobile-dropdown-title"><span class="title">嵌入式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/iot/digital/" class="nav-link">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/iot/51/" class="nav-link">
+  51单片机
+</a></li></ul></div></div><div class="nav-item"><a href="/pmp/" class="nav-link">
+  项目管理
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  个人博客
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>设计模式</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/java/design_pattern/profile.html" aria-current="page" class="active sidebar-link">设计模式概述</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/java/design_pattern/profile.html#_1-产生背景" class="sidebar-link">1. 产生背景</a></li><li class="sidebar-sub-header"><a href="/java/design_pattern/profile.html#_2-概念" class="sidebar-link">2. 概念</a></li><li class="sidebar-sub-header"><a href="/java/design_pattern/profile.html#_3-学习的必要性" class="sidebar-link">3. 学习的必要性</a></li><li class="sidebar-sub-header"><a href="/java/design_pattern/profile.html#_4-设计模式分类" class="sidebar-link">4. 设计模式分类</a></li></ul></li><li><a href="/java/design_pattern/uml.html" class="sidebar-link">UML图</a></li><li><a href="/java/design_pattern/principle.html" class="sidebar-link">软件设计原则</a></li><li><a href="/java/design_pattern/create.html" class="sidebar-link">创建型模式</a></li><li><a href="/java/design_pattern/structure.html" class="sidebar-link">结构性模式</a></li><li><a href="/java/design_pattern/behavior.html" class="sidebar-link">行为型模式</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="设计模式概述"><a href="#设计模式概述" class="header-anchor">#</a> 设计模式概述</h1> <h2 id="_1-产生背景"><a href="#_1-产生背景" class="header-anchor">#</a> 1. 产生背景</h2> <p>”设计模式“ 最初并不是出现在软件设计中，而是被用于建筑领域的设计中。</p> <p>1977年美国著名建筑大师、加利福尼亚大学伯克利分校环境结构中心主任 <code>克里斯托夫·亚历山大（Christopher Alexander）</code> 在他的著作《建筑模式语言：城镇、建筑、构造》中描述了一些常见的建筑设计问题，并提出了 253 种关于对城镇、邻里、住宅、花园和房间等进行设计的基本模式。</p> <p>1990年软件工程界开始研讨设计模式的话题，后来召开了多次关于设计模式的研讨会。直到1995 年，艾瑞克·伽马（ErichGamma）、理査德·海尔姆（Richard Helm）、拉尔夫·约翰森（Ralph Johnson）、约翰·威利斯迪斯（John Vlissides）等 4 位作者合作出版了《设计模式：可复用面向对象软件的基础》一书，在此书中收录了 23 个设计模式，这是设计模式领域里程碑的事件，导致了软件设计模式的突破。这 4 位作者在软件开发领域里也以他们的 “四人组”（Gang of Four，GoF）著称。</p> <h2 id="_2-概念"><a href="#_2-概念" class="header-anchor">#</a> 2. 概念</h2> <p>软件设计模式（Software Design Pattern），又称设计模式，是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。它描述了在软件设计过程中的一些不断重复发生的问题，以及该问题的解决方案。也就是说，它是解决特定问题的一系列套路，是前辈们的代码设计经验的总结，具有一定的普遍性，可以反复使用。</p> <h2 id="_3-学习的必要性"><a href="#_3-学习的必要性" class="header-anchor">#</a> 3. 学习的必要性</h2> <p>设计模式的本质是面向对象设计原则的实际运用，是对类的封装性、继承性和多态性以及类的关联关系和组合关系的充分理解。</p> <p>正确使用设计模式具有以下优点：</p> <ul><li>可以提高程序员的思维能力、编程能力和设计能力。</li> <li>使程序设计更加标准化、代码编制更加工程化，使软件开发效率大大提高，从而缩短软件的开发周期。</li> <li>使设计的代码可重用性高、可读性强、可靠性高、灵活性好、可维护性强。</li></ul> <h2 id="_4-设计模式分类"><a href="#_4-设计模式分类" class="header-anchor">#</a> 4. 设计模式分类</h2> <ul><li><p><strong>创建型模式</strong></p> <p>用于描述“怎样创建对象”，它的主要特点是“将对象的创建与使用分离”。GoF（四人组）书中提供了 <code>单例</code>、<code>原型</code>、<code>工厂方法</code>、<code>抽象工厂</code>、<code>建造者</code> 等 5 种创建型模式。</p></li> <li><p><strong>结构型模式</strong></p> <p>用于描述如何将类或对象按某种布局组成更大的结构，GoF（四人组）书中提供了<code>代理</code>、<code>适配器</code>、<code>桥接</code>、<code>装饰</code>、<code>外观</code>、<code>享元</code>、<code>组合</code> 等 7 种结构型模式。</p></li> <li><p><strong>行为型模式</strong></p> <p>用于描述类或对象之间怎样相互协作共同完成单个对象无法单独完成的任务，以及怎样分配职责。GoF（四人组）书中提供了 <code>模板方法</code>、<code>策略</code>、<code>命令</code>、<code>职责链</code>、<code>状态</code>、<code>观察者</code>、<code>中介者</code>、<code>迭代器</code>、<code>访问者</code>、<code>备忘录</code>、<code>解释器</code> 等 11 种行为型模式。</p></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/java/design_pattern/uml.html">
+        UML图
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.02a3c3f9.js" defer></script><script src="/assets/js/4.4116396b.js" defer></script><script src="/assets/js/44.c0fc8b62.js" defer></script>
+  </body>
+</html>
